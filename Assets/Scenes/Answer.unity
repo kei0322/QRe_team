@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 78115650}
   - component: {fileID: 78115649}
   - component: {fileID: 78115648}
+  - component: {fileID: 78115651}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -202,7 +203,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 78115649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 78115651}
+        m_MethodName: LoadingNewScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &78115649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +252,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78115646}
   m_CullTransparentMesh: 0
+--- !u!114 &78115651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78115646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a71524d24b8a64690a2fda960dac60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &247495055
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +377,7 @@ GameObject:
   - component: {fileID: 259715703}
   - component: {fileID: 259715702}
   - component: {fileID: 259715701}
+  - component: {fileID: 259715704}
   m_Layer: 5
   m_Name: Choices2
   m_TagString: Untagged
@@ -422,7 +447,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 259715702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 259715704}
+        m_MethodName: LoadingNewScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &259715702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +496,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259715699}
   m_CullTransparentMesh: 0
+--- !u!114 &259715704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259715699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a71524d24b8a64690a2fda960dac60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &470644539
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +869,7 @@ GameObject:
   - component: {fileID: 530559561}
   - component: {fileID: 530559560}
   - component: {fileID: 530559559}
+  - component: {fileID: 530559562}
   m_Layer: 5
   m_Name: Choices3
   m_TagString: Untagged
@@ -890,7 +939,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 530559560}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 530559562}
+        m_MethodName: LoadingNewScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &530559560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +988,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530559557}
   m_CullTransparentMesh: 0
+--- !u!114 &530559562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530559557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a71524d24b8a64690a2fda960dac60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1503091422
 GameObject:
   m_ObjectHideFlags: 0
