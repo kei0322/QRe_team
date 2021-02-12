@@ -26,6 +26,7 @@ public class img : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        
         v.theme = "greatman";
     }
 
