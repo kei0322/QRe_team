@@ -13,6 +13,7 @@ public class role_change : MonoBehaviour
     {
         questoner_canvas.gameObject.SetActive(false);
         respondent_canvas.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
