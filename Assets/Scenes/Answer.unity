@@ -1458,9 +1458,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 1628960153}
   img: {fileID: 788474860}
-  greatman0: {fileID: 21300000, guid: b2bf1202d66d32347b51245db5d4e4f0, type: 3}
-  greatman1: {fileID: 21300000, guid: 89fd076a4000c0743ba8a15a19da883b, type: 3}
-  greatman2: {fileID: 21300000, guid: a6c3b535bc8fdc245b492164ca1f2834, type: 3}
+  greatman0: {fileID: 21300000, guid: 8a6edd8ee12812b47a822f067dfd9527, type: 3}
+  greatman1: {fileID: 21300000, guid: 98dd9994044b2ea43b97330c33977728, type: 3}
+  greatman2: {fileID: 21300000, guid: 27c52244a0167194cbb10898602d0f04, type: 3}
 --- !u!4 &1628960155
 Transform:
   m_ObjectHideFlags: 0

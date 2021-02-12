@@ -493,16 +493,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u540D\u524D"
@@ -729,7 +729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &407405859
 Transform:
   m_ObjectHideFlags: 0
@@ -946,10 +946,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 48
     m_Alignment: 3
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -1208,7 +1208,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -1531,7 +1531,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -1705,9 +1705,9 @@ MonoBehaviour:
   img: {fileID: 2052924807}
   name: {fileID: 242840888}
   description: {fileID: 656819111}
-  greatman0: {fileID: 21300000, guid: b2bf1202d66d32347b51245db5d4e4f0, type: 3}
-  greatman1: {fileID: 21300000, guid: 89fd076a4000c0743ba8a15a19da883b, type: 3}
-  greatman2: {fileID: 21300000, guid: a6c3b535bc8fdc245b492164ca1f2834, type: 3}
+  greatman0: {fileID: 21300000, guid: 8a6edd8ee12812b47a822f067dfd9527, type: 3}
+  greatman1: {fileID: 21300000, guid: 98dd9994044b2ea43b97330c33977728, type: 3}
+  greatman2: {fileID: 21300000, guid: 27c52244a0167194cbb10898602d0f04, type: 3}
 --- !u!1 &1668177992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,7 +2173,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -2325,7 +2325,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0a523bec0631d434e9957cb838408724, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -2662,6 +2662,6 @@ MonoBehaviour:
   img1: {fileID: 211145486}
   img2: {fileID: 1969104227}
   def: {fileID: 21300000, guid: 0ea27d2ea7bdc4a44b6a114de8cf3808, type: 3}
-  greatman0: {fileID: 21300000, guid: b2bf1202d66d32347b51245db5d4e4f0, type: 3}
-  greatman1: {fileID: 21300000, guid: 89fd076a4000c0743ba8a15a19da883b, type: 3}
-  greatman2: {fileID: 21300000, guid: a6c3b535bc8fdc245b492164ca1f2834, type: 3}
+  greatman0: {fileID: 21300000, guid: 8a6edd8ee12812b47a822f067dfd9527, type: 3}
+  greatman1: {fileID: 21300000, guid: 98dd9994044b2ea43b97330c33977728, type: 3}
+  greatman2: {fileID: 21300000, guid: 27c52244a0167194cbb10898602d0f04, type: 3}
