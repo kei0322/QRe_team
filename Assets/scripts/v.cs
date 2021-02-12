@@ -12,4 +12,5 @@ public class v : MonoBehaviour
     public static int choices = 0;
     public static bool ttf = false;
     public static int answer = 0;
+    public static int ans_num=0;
 }
