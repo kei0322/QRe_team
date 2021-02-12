@@ -36,7 +36,7 @@ public class questoner : MonoBehaviourPunCallbacks
     {
         if (theme == "greatman") gm_image_switch();
         if (v.ansum >= v.player_count) photonView.RPC(nameof(to_test_frag), RpcTarget.All);
-        if (ttf == true) SceneManager.LoadScene("result");
+        if (ttf == true) SceneManager.LoadScene("Answer");
     }
 
     private void gm_image_switch()
@@ -45,8 +45,8 @@ public class questoner : MonoBehaviourPunCallbacks
         {
             case 0:
                 if (answer == 0) { img.sprite = greatman0; name.GetComponent<Text>().text = "織田信長"; description.GetComponent<Text>().text = "・鳴かぬなら\n・うつけ\n・楽市楽座\n・火縄銃\n・天下布武\n・人間五十年"; }
-                if (answer == 1) { img.sprite = greatman1; name.GetComponent<Text>().text = "豊臣秀吉"; description.GetComponent<Text>().text = "織田信長"; }
-                if (answer == 2) { img.sprite = greatman2; name.GetComponent<Text>().text = "徳川家康"; description.GetComponent<Text>().text = "織田信長"; }
+                if (answer == 1) { img.sprite = greatman1; name.GetComponent<Text>().text = "豊臣秀吉"; description.GetComponent<Text>().text = "・猿\n・刀狩り\n・水攻め\n・天下統一"; }
+                if (answer == 2) { img.sprite = greatman2; name.GetComponent<Text>().text = "徳川家康"; description.GetComponent<Text>().text = "・狸\n・幕府\n・関ヶ原\n・江戸"; }
                 break;
             default:
                 break;
