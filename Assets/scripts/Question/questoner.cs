@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class questoner : MonoBehaviourPunCallbacks
 {
-    public PhotonView photonView;
+    //public PhotonView photonView;
 
     public Image img;//左の画像
 
@@ -25,23 +25,20 @@ public class questoner : MonoBehaviourPunCallbacks
     //private int answer = 0;
     //private bool ttf = false;
 
-        
-
     // Start is called before the first frame update
     void Start()
     {
-        v.answer = (int)Random.Range(0.0f, 3.0f);
-        
+        //v.answer = (int)Random.Range(0.0f, 3.0f);
         Debug.Log(v.answer);
     }
 
     // Update is called once per frame
     void Update()
     {
-        photonView.RPC(nameof(answer_send), RpcTarget.All);
         if (v.theme == "greatman") gm_image_switch();
         if (v.ansum >= v.player_count) photonView.RPC(nameof(to_test_frag), RpcTarget.All);
-        if (v.ttf == true) SceneManager.LoadScene("Answer");
+        //現状Answerシーンに飛ぶ必要がないのでコメントアウトしています 岩下
+        //if (v.ttf == true) SceneManager.LoadScene("Answer");
     }
 
     private void gm_image_switch()
@@ -63,11 +60,5 @@ public class questoner : MonoBehaviourPunCallbacks
     void to_test_frag()
     {
         v.ttf = true;
-    }
-
-    [PunRPC]
-    void answer_send()
-    {
-        v.ans_num = v.answer;
     }
 }

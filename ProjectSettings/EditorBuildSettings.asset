@@ -78,4 +78,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CheckAnswer.unity
     guid: f6a824436d2a43146abcb23149957f75
+  - enabled: 1
+    path: Assets/Taiga_answer/Result.unity
+    guid: 1115bad72a2466747a77a1e6ad0daf7e
+  - enabled: 1
+    path: Assets/Taiga_answer/New_Questions.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

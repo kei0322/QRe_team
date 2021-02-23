@@ -91,7 +91,7 @@ namespace Com.MyCompany.MyGame
         public override void OnCreatedRoom()
         {
             //battleシーンへ遷移
-            PhotonNetwork.LoadLevel("Questions");
+            PhotonNetwork.LoadLevel("New_Questions");
         }
         #endregion
     }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class respondent : MonoBehaviourPunCallbacks
 {
-    public PhotonView photonView;//pun使うために必用な奴
+    //public PhotonView photonView;//pun使うために必用な奴
 
     public Image img0;//左の画像
     public Image img1;//真ん中の画像
@@ -23,20 +23,21 @@ public class respondent : MonoBehaviourPunCallbacks
     //private int choices = 0;
     //private bool ttf=false;
 
+
     private void Start()
     {
-        
+
         v.theme = "greatman";
     }
 
     // Update is called once per frame
     private void Update()
     {
-        v.answer = v.ans_num;
         if (v.theme == "greatman") gm_image_switch();
-        
+
         if (v.ansum >= v.player_count) photonView.RPC(nameof(to_test_frag), RpcTarget.All);
-        if(v.ttf ==true) SceneManager.LoadScene("Answer");
+        //現状Answerシーンに飛ぶ必要がないのでコメントアウトしています 岩下
+        //if (v.ttf == true) SceneManager.LoadScene("Answer");
         //photonView.RPC(nameof(SendChatMessage), RpcTarget.Others, "よろしくお願いします");
     }
 
