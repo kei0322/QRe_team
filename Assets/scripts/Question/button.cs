@@ -5,12 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class button : MonoBehaviourPunCallbacks
 {
-    public PhotonView photonView;
+    //public PhotonView photonView;
 
     public Image Invalid_image0;
     public Image Invalid_image1;
     public Image Invalid_image2;
     public GameObject button_set;
+
+    public void Update()
+    {
+        Invalid_image0.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        Invalid_image1.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        Invalid_image2.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+    }
 
     public void to_game()
     {
@@ -47,6 +54,7 @@ public class button : MonoBehaviourPunCallbacks
         button_set.gameObject.SetActive(false);
         photonView.RPC(nameof(ansum_share), RpcTarget.All);
     }
+
 
     public void tohome()
     {

@@ -16,28 +16,27 @@ public class img_print : MonoBehaviourPunCallbacks
     public Sprite greatman1;
     public Sprite greatman2;
 
-    //private string theme;
-    //private int choices = 0;
+    private string theme;
+    private int choices = 0;
     //private int answer=0;
 
     // Start is called before the first frame update
     void Start()
     {
-        v.theme = "greatman";
-        v.ttf = false;
-        v.ansum = 0;
+        Debug.Log(v.answer);
+        theme = "greatman";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (v.theme == "greatman") gm_image_switch();
-        if (v.tohome == true) SceneManager.LoadScene("home");
+        if (theme == "greatman") gm_image_switch();
+        //if (v.tohome == true) SceneManager.LoadScene("home");
     }
 
     private void gm_image_switch()
     {
-        switch (v.choices)
+        switch (choices)
         {
             case 0:
                 if (v.answer == 0) img.sprite = greatman0;
@@ -49,4 +48,6 @@ public class img_print : MonoBehaviourPunCallbacks
         }
 
     }
+
+
 }
