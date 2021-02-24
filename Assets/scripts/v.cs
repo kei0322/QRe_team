@@ -6,7 +6,7 @@ public class v : MonoBehaviour
 {
     //加藤君の作った共通変数
     public static int[] panel = new int[3];
-    public static int player_count = 2; //回答者数
+    public static int player_count = 1; //回答者数
     public static int ansum = 0;
     public static bool tohome = false;
     public static string theme = "greatman";
@@ -16,7 +16,7 @@ public class v : MonoBehaviour
 
 
     //岩下が作った共通変数
-    public static int all_player = 3;//全体のプレイヤー数
+    public static int all_player = 1;//全体のプレイヤー数
     public static int turn_sum = 0;//ターンの合計
     public static int result_sum = 0;//リザルトボタンを押した人数
     public static int select_sum = 0;//ロールを選択した人の数

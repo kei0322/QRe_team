@@ -129,11 +129,13 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
         Debug.Log(turn);//1回目[1]だった
         //この後タイマースタートさせると正常に動く
         //追加(2020/2/22)
-        if (turn >= v.all_player)
+        /*
+        if (turn >= 2)
         {
             button_set.gameObject.SetActive(false);
             button_set1.gameObject.SetActive(true);
         }
+        */
     }
 
     [PunRPC]
