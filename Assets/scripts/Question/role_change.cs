@@ -118,11 +118,7 @@ public class role_change : MonoBehaviourPunCallbacks
     void role_panel_change()
     {
         timer.gameObject.SetActive(true);
-        button_canvas.gameObject.SetActive(true);
-        button_role_0.gameObject.SetActive(true);
-        button_role_1.gameObject.SetActive(true);
-        wait_text.gameObject.SetActive(false);
-        role_change_canvas.gameObject.SetActive(false);
+        Invoke("close_chanvas", 0.3f);
     }
 
     [PunRPC]
@@ -136,6 +132,16 @@ public class role_change : MonoBehaviourPunCallbacks
     {
         v.select_sum = 0;
         v.wait_frag = false;
+    }
+
+    //ロールチェンジキャンバスの遅延処理
+    void close_chanvas()
+    {
+        button_canvas.gameObject.SetActive(true);
+        button_role_0.gameObject.SetActive(true);
+        button_role_1.gameObject.SetActive(true);
+        wait_text.gameObject.SetActive(false);
+        role_change_canvas.gameObject.SetActive(false);
     }
 
     [PunRPC]
