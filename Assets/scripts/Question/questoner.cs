@@ -15,9 +15,9 @@ public class questoner : MonoBehaviourPunCallbacks
     public Text description;
 
     //偉人
-    public Sprite greatman0;
-    public Sprite greatman1;
-    public Sprite greatman2;
+    //public Sprite greatman0;
+    //public Sprite greatman1;
+    //public Sprite greatman2;
 
     //共有変数
     //private string theme="greatman";
@@ -36,6 +36,7 @@ public class questoner : MonoBehaviourPunCallbacks
     void Update()
     {
         if (v.theme == "greatman") gm_image_switch();
+        if (v.theme == "chaos") ch_image_switch();
         if (v.ansum >= v.player_count) photonView.RPC(nameof(to_test_frag), RpcTarget.All);
         //現状Answerシーンに飛ぶ必要がないのでコメントアウトしています 岩下
         //if (v.ttf == true) SceneManager.LoadScene("Answer");
@@ -129,6 +130,106 @@ public class questoner : MonoBehaviourPunCallbacks
                 if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/greatman/kaesaru"); name.GetComponent<Text>().text = "カエサル"; description.GetComponent<Text>().text = "・ローマ\n・婚約者はクレオパトラ\n・賽は投げられた\n・来た、見た、勝った\n・ブルータス、お前もか"; }
                 if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/greatman/puratonn"); name.GetComponent<Text>().text = "プラトン"; description.GetComponent<Text>().text = "・ギリシャ\n・哲学者\n・ソクラテスの弟子\n・イデア"; }
                 if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/greatman/minamotonoyositune"); name.GetComponent<Text>().text = "源義経"; description.GetComponent<Text>().text = "・源氏\n・幼名は牛若丸\n・八艘飛び"; }
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    private void ch_image_switch()
+    {
+        switch (v.choices)
+        {
+            case 0:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/burokkori-"); name.GetComponent<Text>().text = "ブロッコリー"; description.GetComponent<Text>().text = "・緑\n・もじゃもじゃ\n・緑黄色野菜"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/pi-mnn"); name.GetComponent<Text>().text = "ピーマン"; description.GetComponent<Text>().text = "・緑\n・苦い\n・緑黄色野菜\n・炒め物によく使う"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/kyuuri"); name.GetComponent<Text>().text = "きゅうり"; description.GetComponent<Text>().text = "・緑\n・苦い\n・みずみずしい"; }
+                break;
+            case 1:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/kyabetu"); name.GetComponent<Text>().text = "キャベツ"; description.GetComponent<Text>().text = "・葉\n・玉\n・肉を巻く\n・千切り"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/retasu"); name.GetComponent<Text>().text = "レタス"; description.GetComponent<Text>().text = "・葉\n・挟むことが多い\n・サラダ"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/hakusai"); name.GetComponent<Text>().text = "白菜"; description.GetComponent<Text>().text = "・緑と白\n・冬・鍋によく使う"; }
+                break;
+            case 2:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/tomato"); name.GetComponent<Text>().text = "トマト"; description.GetComponent<Text>().text = "・赤\n・酸っぱい\n・リコピン\n・回文"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/jagaimo"); name.GetComponent<Text>().text = "ジャガイモ"; description.GetComponent<Text>().text = "・デンプン\n・芽に毒\n・根ではなく茎です"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/papurika"); name.GetComponent<Text>().text = "パプリカ"; description.GetComponent<Text>().text = "・赤\n・黄\n・サラダ\n・米津玄師"; }
+                break;
+            case 3:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/komatuna"); name.GetComponent<Text>().text = "小松菜"; description.GetComponent<Text>().text = "・葉\n・雑煮\n・おひたし"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/serori"); name.GetComponent<Text>().text = "セロリ"; description.GetComponent<Text>().text = "・葉\n・匂いが強い\n・臭み消しに使われる"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/karihurawa-"); name.GetComponent<Text>().text = "カリフラワー"; description.GetComponent<Text>().text = "・白\n・もじゃもじゃ\n・アルビノ"; }
+                break;
+            case 4:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/tora"); name.GetComponent<Text>().text = "トラ"; description.GetComponent<Text>().text = "・天敵がいない\n・ガオー\n・シマシマ模様"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/raionn"); name.GetComponent<Text>().text = "ライオン"; description.GetComponent<Text>().text = "・百獣の王\n・ガオー\n・たてがみ"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/ti-ta-"); name.GetComponent<Text>().text = "チーター"; description.GetComponent<Text>().text = "・速い\n・ガオー\n・黒い水玉模様"; }
+                break;
+            case 5:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/usi"); name.GetComponent<Text>().text = "牛"; description.GetComponent<Text>().text = "・牛乳\n・もーもー\n・白と黒の班目模様"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/niwatori"); name.GetComponent<Text>().text = "にわとり"; description.GetComponent<Text>().text = "・タマゴ\n・こけこっこー！\n・赤いトサカがかっこいい"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/buta"); name.GetComponent<Text>().text = "豚"; description.GetComponent<Text>().text = "・豚肉\n・ぶーぶー\n・実は俊足"; }
+                break;
+            case 6:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/kitune"); name.GetComponent<Text>().text = "狐"; description.GetComponent<Text>().text = "・ライバルはタヌキ\n・こーん\n・油揚げ"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/tanuki"); name.GetComponent<Text>().text = "狸"; description.GetComponent<Text>().text = "・ライバルはキツネ\n・ぽんぽん\n・天かす"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/nezumi"); name.GetComponent<Text>().text = "ネズミ"; description.GetComponent<Text>().text = "・干支の初め\n・ちゅーちゅー\n・チーズ"; }
+                break;
+            case 7:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/kuruma"); name.GetComponent<Text>().text = "車"; description.GetComponent<Text>().text = "・・1~5人用\n・速い\n・道路を走る"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/zitennsya"); name.GetComponent<Text>().text = "自転車"; description.GetComponent<Text>().text = "・一人用\n・遅い\n・道路を走る"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/basu"); name.GetComponent<Text>().text = "バス"; description.GetComponent<Text>().text = "・一度に多くの人を運ぶ\n・縦に長い\n・道路を走る"; }
+                break;
+            case 8:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/hikouki"); name.GetComponent<Text>().text = "飛行機"; description.GetComponent<Text>().text = "・一度に多くの人を運ぶ\n・長い距離を移動\n・空を飛ぶ・ジェットエンジンで飛行"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/dennsya"); name.GetComponent<Text>().text = "電車"; description.GetComponent<Text>().text = "・一度に多くの人を運ぶ\n・長い距離を移動\n・線路に乗って移動"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/hune"); name.GetComponent<Text>().text = "船"; description.GetComponent<Text>().text = "・一度に多くの人を運ぶ\n・浮いている\n・海を走る"; }
+                break;
+            case 9:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/f1"); name.GetComponent<Text>().text = "F1"; description.GetComponent<Text>().text = "・１人用\n・レース\n・Gがかかる\n・超早い"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/bagi-"); name.GetComponent<Text>().text = "バギー"; description.GetComponent<Text>().text = "・１～２用\n・車体は小さい\n・オフロード走行に特化"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/baiku"); name.GetComponent<Text>().text = "バイク"; description.GetComponent<Text>().text = "・１～２用\n・小回りが利く\n・道都を走る"; }
+                break;
+            case 10:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/ro-doro-ra-"); name.GetComponent<Text>().text = "ロードローラー"; description.GetComponent<Text>().text = "・工事用車両\n・アスファルト\n・鈍足"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/syoberuka-"); name.GetComponent<Text>().text = "ショベルカー"; description.GetComponent<Text>().text = "・工事用車両\n・アーム\n・掘削"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/burudo-za-"); name.GetComponent<Text>().text = "ブルドーザー"; description.GetComponent<Text>().text = "・工事用車両\n・整地\n・キャタピラ"; }
+                break;
+            case 11:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/maguro"); name.GetComponent<Text>().text = "マグロ"; description.GetComponent<Text>().text = "・赤身\n・トロ\n・止まらない"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/sake"); name.GetComponent<Text>().text = "鮭"; description.GetComponent<Text>().text = "・実は白身魚\n・母川回帰\n・イクラ"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/iwasi"); name.GetComponent<Text>().text = "イワシ"; description.GetComponent<Text>().text = "・海水魚\n・群れで行動する\n・アンチョビ\n・稚魚はシラス"; }
+                break;
+            case 12:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/same"); name.GetComponent<Text>().text = "サメ"; description.GetComponent<Text>().text = "・大きい\n・凶暴\n・牙\n・フカヒレ"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/si-rakannsu"); name.GetComponent<Text>().text = "シーラカンス"; description.GetComponent<Text>().text = "・深海魚\n・古代魚\n・生きた化石"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/hugu"); name.GetComponent<Text>().text = "ふぐ"; description.GetComponent<Text>().text = "・丸\n・卵巣や肝臓に毒\n・糠漬けにすると何故か毒が消える"; }
+                break;
+            case 13:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/kabutomusi"); name.GetComponent<Text>().text = "カブトムシ"; description.GetComponent<Text>().text = "・甲虫\n・オスは角がある\n・虫相撲"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/kuwagatamusi"); name.GetComponent<Text>().text = "クワガタムシ"; description.GetComponent<Text>().text = "・甲虫\n・一対の顎を持つ\n・雑木林などにいる"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/cyou"); name.GetComponent<Text>().text = "蝶"; description.GetComponent<Text>().text = "・飛ぶ\n・完全変態\n・蜜を吸う"; }
+                break;
+            case 14:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/hati"); name.GetComponent<Text>().text = "蜂"; description.GetComponent<Text>().text = "・黄色と黒\n・毒針を持つ\n・ハニカム構造の巣\n・蜜を集める種類もいる"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/semi"); name.GetComponent<Text>().text = "セミ"; description.GetComponent<Text>().text = "・飛ぶ\n・実は寿命は７日ではない\n・樹液を吸う\n・うるさい"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/ari"); name.GetComponent<Text>().text = "アリ"; description.GetComponent<Text>().text = "・社会性昆虫\n・黒\n・小さい"; }
+                break;
+            case 15:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/yakyuu"); name.GetComponent<Text>().text = "野球"; description.GetComponent<Text>().text = "・バット\n・ボール\n・グローブ"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/sakka-"); name.GetComponent<Text>().text = "サッカー"; description.GetComponent<Text>().text = "・手を使わない\n・ボール\n・ドリブル"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/kenndou"); name.GetComponent<Text>().text = "剣道"; description.GetComponent<Text>().text = "・竹刀\n・防具\n・掛け声"; }
+                break;
+            case 16:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/bare-"); name.GetComponent<Text>().text = "バレー"; description.GetComponent<Text>().text = "・一瞬しか触れられない\n・ボール\n・背が高いと有利"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/basuke"); name.GetComponent<Text>().text = "バスケ"; description.GetComponent<Text>().text = "・ドリブル\n・ボール\n・背が高いと有利"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/ragubi-"); name.GetComponent<Text>().text = "ラグビー"; description.GetComponent<Text>().text = "・変わったボール\n・手足両方使う\n・トライ"; }
+                break;
+            case 17:
+                if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/takkyuu"); name.GetComponent<Text>().text = "卓球"; description.GetComponent<Text>().text = "・ラケット\n・ボール\n・ラバー"; }
+                if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/tenisu"); name.GetComponent<Text>().text = "テニス"; description.GetComponent<Text>().text = "・ラケット\n・ボール\n・ガット"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/batominntonn"); name.GetComponent<Text>().text = "バトミントン"; description.GetComponent<Text>().text = "・ラケット\n・シャトル\n・スピードが特殊"; }
                 break;
             default:
                 break;

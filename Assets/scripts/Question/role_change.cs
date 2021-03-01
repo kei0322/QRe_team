@@ -54,7 +54,6 @@ public class role_change : MonoBehaviourPunCallbacks
     {
         questoner_canvas.gameObject.SetActive(false);
         respondent_canvas.gameObject.SetActive(true);
-        photonView.RPC(nameof(ressum), RpcTarget.All);
         Debug.Log("回答者を選択します");
     }
 
@@ -63,30 +62,10 @@ public class role_change : MonoBehaviourPunCallbacks
         ans = (int)Random.Range(0.0f, 3.0f);//三人の中から答えとなる人を一人選ぶ
         cho = (int)Random.Range(0.0f, 18.0f);//いっぱいの中からクイズのセットを選ぶ
         //ans = 2;
-        if (ans == 0) photonView.RPC(nameof(answer0_share), RpcTarget.All);//全員の答えとなる人を0番(1番左)に設定する
-        if (ans == 1) photonView.RPC(nameof(answer1_share), RpcTarget.All);//全員の答えとなる人を1番(真ん中)に設定する
-        if (ans == 2) photonView.RPC(nameof(answer2_share), RpcTarget.All);//全員の答えとなる人を2番(1番右)に設定する
+        photonView.RPC(nameof(answer_share), RpcTarget.All, ans);//全員の答えとなる人を0番(1番左)に設定する
 
-        if (cho == 0) photonView.RPC(nameof(choices0_share), RpcTarget.All);
-        if (cho == 1) photonView.RPC(nameof(choices1_share), RpcTarget.All);
-        if (cho == 2) photonView.RPC(nameof(choices2_share), RpcTarget.All);
-        if (cho == 3) photonView.RPC(nameof(choices3_share), RpcTarget.All);
-        if (cho == 4) photonView.RPC(nameof(choices4_share), RpcTarget.All);
-        if (cho == 5) photonView.RPC(nameof(choices5_share), RpcTarget.All);
-        if (cho == 6) photonView.RPC(nameof(choices6_share), RpcTarget.All);
-        if (cho == 7) photonView.RPC(nameof(choices7_share), RpcTarget.All);
-        if (cho == 8) photonView.RPC(nameof(choices8_share), RpcTarget.All);
-        if (cho == 9) photonView.RPC(nameof(choices9_share), RpcTarget.All);
-        if (cho == 10) photonView.RPC(nameof(choices10_share), RpcTarget.All);
-        if (cho == 11) photonView.RPC(nameof(choices11_share), RpcTarget.All);
-        if (cho == 12) photonView.RPC(nameof(choices12_share), RpcTarget.All);
-        if (cho == 13) photonView.RPC(nameof(choices13_share), RpcTarget.All);
-        if (cho == 14) photonView.RPC(nameof(choices14_share), RpcTarget.All);
-        if (cho == 15) photonView.RPC(nameof(choices15_share), RpcTarget.All);
-        if (cho == 16) photonView.RPC(nameof(choices16_share), RpcTarget.All);
+        photonView.RPC(nameof(choices_share), RpcTarget.All, cho);
 
-        //正解者数を合わせるために一瞬だけ表示した後すぐ非表示にします
-        respondent_canvas.gameObject.SetActive(true);
         respondent_canvas.gameObject.SetActive(false);
         questoner_canvas.gameObject.SetActive(true);
         Debug.Log("出題者を選択します");
@@ -148,128 +127,14 @@ public class role_change : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void ressum()
+    void answer_share(int ans)
     {
-        v.res_sum++;
+        v.answer = ans;
     }
 
     [PunRPC]
-    void answer0_share()
+    void choices_share(int c)
     {
-        v.answer = 0;
-    }
-
-    [PunRPC]
-    void answer1_share()
-    {
-        v.answer = 1;
-    }
-
-    [PunRPC]
-    void answer2_share()
-    {
-        v.answer = 2;
-    }
-
-    [PunRPC]
-    void choices0_share()
-    {
-        v.choices = 0;
-    }
-
-    [PunRPC]
-    void choices1_share()
-    {
-        v.choices = 1;
-    }
-
-    [PunRPC]
-    void choices2_share()
-    {
-        v.choices = 2;
-    }
-
-    [PunRPC]
-    void choices3_share()
-    {
-        v.choices = 3;
-    }
-
-    [PunRPC]
-    void choices4_share()
-    {
-        v.choices = 4;
-    }
-
-    [PunRPC]
-    void choices5_share()
-    {
-        v.choices = 5;
-    }
-
-    [PunRPC]
-    void choices6_share()
-    {
-        v.choices = 6;
-    }
-
-    [PunRPC]
-    void choices7_share()
-    {
-        v.choices = 7;
-    }
-
-    [PunRPC]
-    void choices8_share()
-    {
-        v.choices = 8;
-    }
-
-    [PunRPC]
-    void choices9_share()
-    {
-        v.choices = 9;
-    }
-
-    [PunRPC]
-    void choices10_share()
-    {
-        v.choices = 10;
-    }
-
-    [PunRPC]
-    void choices11_share()
-    {
-        v.choices = 11;
-    }
-
-    [PunRPC]
-    void choices12_share()
-    {
-        v.choices = 12;
-    }
-
-    [PunRPC]
-    void choices13_share()
-    {
-        v.choices = 13;
-    }
-
-    [PunRPC]
-    void choices14_share()
-    {
-        v.choices = 14;
-    }
-
-    [PunRPC]
-    void choices15_share()
-    {
-        v.choices = 15;
-    }
-
-    [PunRPC]
-    void choices16_share()
-    {
-        v.choices = 16;
+        v.choices = c;
     }
 }
