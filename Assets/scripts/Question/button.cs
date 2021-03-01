@@ -33,6 +33,7 @@ public class button : MonoBehaviourPunCallbacks
         Invalid_image2.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         button_set.gameObject.SetActive(false);
         photonView.RPC(nameof(ansum_share), RpcTarget.All);
+        if (v.answer == 0) photonView.RPC(nameof(correct_share0), RpcTarget.All);
     }
     public void select1()
     {
@@ -43,6 +44,7 @@ public class button : MonoBehaviourPunCallbacks
         Invalid_image2.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         button_set.gameObject.SetActive(false);
         photonView.RPC(nameof(ansum_share), RpcTarget.All);
+        if (v.answer == 1) photonView.RPC(nameof(correct_share1), RpcTarget.All);
     }
     public void select2()
     {
@@ -53,6 +55,7 @@ public class button : MonoBehaviourPunCallbacks
         Invalid_image2.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         button_set.gameObject.SetActive(false);
         photonView.RPC(nameof(ansum_share), RpcTarget.All);
+        if (v.answer == 2) photonView.RPC(nameof(correct_share2), RpcTarget.All);
     }
 
 
@@ -67,5 +70,21 @@ public class button : MonoBehaviourPunCallbacks
         v.ansum++;
     }
 
+    [PunRPC]
+    void correct_share0()
+    {
+        v.correct0++;
+    }
 
+    [PunRPC]
+    void correct_share1()
+    {
+        v.correct1++;
+    }
+
+    [PunRPC]
+    void correct_share2()
+    {
+        v.correct2++;
+    }
 }
