@@ -57,7 +57,7 @@ public class respondent : MonoBehaviourPunCallbacks
                 img2.sprite = Resources.Load<Sprite>("images/greatman/okitasousi");
                 break;
             case 2:
-                img0.sprite = Resources.Load<Sprite>("images/greatman/edison");
+                img0.sprite = Resources.Load<Sprite>("images/greatman/ezisonn");
                 img1.sprite = Resources.Load<Sprite>("images/greatman/nikoratesura");
                 img2.sprite = Resources.Load<Sprite>("images/greatman/raitokyoudai");
                 break;
