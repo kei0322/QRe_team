@@ -27,13 +27,14 @@ public class respondent : MonoBehaviourPunCallbacks
     private void Start()
     {
 
-        v.theme = "greatman";
+        //v.theme = "greatman";
     }
 
     // Update is called once per frame
     private void Update()
     {
         if (v.theme == "greatman") gm_image_switch();
+        if (v.theme == "chaos") ch_image_switch();
 
         if (v.ansum >= v.player_count) photonView.RPC(nameof(to_test_frag), RpcTarget.All);
         //現状Answerシーンに飛ぶ必要がないのでコメントアウトしています 岩下
@@ -129,6 +130,106 @@ public class respondent : MonoBehaviourPunCallbacks
                 img0.sprite = Resources.Load<Sprite>("images/greatman/kaesaru");
                 img1.sprite = Resources.Load<Sprite>("images/greatman/puratonn");
                 img2.sprite = Resources.Load<Sprite>("images/greatman/minamotonoyositune");
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    private void ch_image_switch()
+    {
+        switch (v.choices)
+        {
+            case 0:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/burokkori-");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/pi-mnn");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/kyuuri");
+                break;
+            case 1:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/kyabetu");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/retasu");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/hakusai");
+                break;
+            case 2:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/tomato");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/jagaimo");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/papurika");
+                break;
+            case 3:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/komatuna");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/serori");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/karihurawa-");
+                break;
+            case 4:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/tora");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/raionn");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/ti-ta-");
+                break;
+            case 5:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/usi");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/niwatori");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/buta");
+                break;
+            case 6:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/kitune");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/tanuki");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/nezumi");
+                break;
+            case 7:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/kuruma");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/zitennsya");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/basu");
+                break;
+            case 8:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/hikouki");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/dennsya");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/hune");
+                break;
+            case 9:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/f1");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/bagi-");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/baiku");
+                break;
+            case 10:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/ro-doro-ra-");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/syoberuka-");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/burudo-za-");
+                break;
+            case 11:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/maguro");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/sake");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/iwasi");
+                break;
+            case 12:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/same");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/si-rakannsu");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/hugu");
+                break;
+            case 13:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/kabutomusi");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/kuwagatamusi");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/cyou");
+                break;
+            case 14:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/hati");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/semi");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/ari");
+                break;
+            case 15:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/yakyuu");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/sakka-");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/kenndou");
+                break;
+            case 16:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/bare-");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/basuke");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/ragubi-");
+                break;
+            case 17:
+                img0.sprite = Resources.Load<Sprite>("images/chaos/takkyuu");
+                img1.sprite = Resources.Load<Sprite>("images/chaos/tenisu");
+                img2.sprite = Resources.Load<Sprite>("images/chaos/batominntonn");
                 break;
             default:
                 break;
