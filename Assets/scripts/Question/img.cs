@@ -26,7 +26,7 @@ public class img : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        v.theme = "greatman";
+        //v.theme = "greatman";
     }
 
     // Update is called once per frame

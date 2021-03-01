@@ -11,13 +11,14 @@ public class button_text : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (v.theme == "greatman") gm_image_switch();
+        if (v.theme == "chaos") ch_image_switch();
     }
 
     private void gm_image_switch()
@@ -108,6 +109,109 @@ public class button_text : MonoBehaviour
                 bt0.GetComponent<Text>().text = "カエサル";
                 bt1.GetComponent<Text>().text = "プラトン";
                 bt2.GetComponent<Text>().text = "源義経";
+                break;
+
+            default:
+                break;
+
+
+        }
+
+    }
+
+    private void ch_image_switch()
+    {
+        switch (v.choices)
+        {
+            case 0:
+                bt0.GetComponent<Text>().text = "ブロッコリー";
+                bt1.GetComponent<Text>().text = "ピーマン";
+                bt2.GetComponent<Text>().text = "きゅうり";
+                break;
+            case 1:
+                bt0.GetComponent<Text>().text = "キャベツ";
+                bt1.GetComponent<Text>().text = "レタス";
+                bt2.GetComponent<Text>().text = "白菜";
+                break;
+            case 2:
+                bt0.GetComponent<Text>().text = "トマト";
+                bt1.GetComponent<Text>().text = "ジャガイモ";
+                bt2.GetComponent<Text>().text = "パプリカ";
+                break;
+            case 3:
+                bt0.GetComponent<Text>().text = "小松菜";
+                bt1.GetComponent<Text>().text = "セロリ";
+                bt2.GetComponent<Text>().text = "カリフラワー";
+                break;
+            case 4:
+                bt0.GetComponent<Text>().text = "トラ";
+                bt1.GetComponent<Text>().text = "ライオン";
+                bt2.GetComponent<Text>().text = "チーター";
+                break;
+            case 5:
+                bt0.GetComponent<Text>().text = "牛";
+                bt1.GetComponent<Text>().text = "にわとり";
+                bt2.GetComponent<Text>().text = "豚";
+                break;
+            case 6:
+                bt0.GetComponent<Text>().text = "狐";
+                bt1.GetComponent<Text>().text = "狸";
+                bt2.GetComponent<Text>().text = "ネズミ";
+                break;
+            case 7:
+                bt0.GetComponent<Text>().text = "車";
+                bt1.GetComponent<Text>().text = "自転車";
+                bt2.GetComponent<Text>().text = "バス";
+                break;
+            case 8:
+                bt0.GetComponent<Text>().text = "飛行機";
+                bt1.GetComponent<Text>().text = "電車";
+                bt2.GetComponent<Text>().text = "船";
+                break;
+            case 9:
+                bt0.GetComponent<Text>().text = "F1";
+                bt1.GetComponent<Text>().text = "バギー";
+                bt2.GetComponent<Text>().text = "バイク";
+                break;
+            case 10:
+                bt0.GetComponent<Text>().text = "ロードローラー";
+                bt1.GetComponent<Text>().text = "ショベルカー";
+                bt2.GetComponent<Text>().text = "ブルドーザー";
+                break;
+            case 11:
+                bt0.GetComponent<Text>().text = "マグロ";
+                bt1.GetComponent<Text>().text = "鮭";
+                bt2.GetComponent<Text>().text = "イワシ";
+                break;
+            case 12:
+                bt0.GetComponent<Text>().text = "サメ";
+                bt1.GetComponent<Text>().text = "シーラカンス";
+                bt2.GetComponent<Text>().text = "ふぐ";
+                break;
+            case 13:
+                bt0.GetComponent<Text>().text = "カブトムシ";
+                bt1.GetComponent<Text>().text = "クワガタムシ";
+                bt2.GetComponent<Text>().text = "蝶";
+                break;
+            case 14:
+                bt0.GetComponent<Text>().text = "蜂";
+                bt1.GetComponent<Text>().text = "セミ";
+                bt2.GetComponent<Text>().text = "アリ";
+                break;
+            case 15:
+                bt0.GetComponent<Text>().text = "野球";
+                bt1.GetComponent<Text>().text = "サッカー";
+                bt2.GetComponent<Text>().text = "剣道";
+                break;
+            case 16:
+                bt0.GetComponent<Text>().text = "バレー";
+                bt1.GetComponent<Text>().text = "バスケ";
+                bt2.GetComponent<Text>().text = "ラグビー";
+                break;
+            case 17:
+                bt0.GetComponent<Text>().text = "卓球";
+                bt1.GetComponent<Text>().text = "テニス";
+                bt2.GetComponent<Text>().text = "バトミントン";
                 break;
 
             default:

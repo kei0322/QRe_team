@@ -16,7 +16,7 @@ public class img_print : MonoBehaviourPunCallbacks
     public Sprite greatman1;
     public Sprite greatman2;
 
-    private string theme;
+    //private string theme;
     //private int choices = 0;
     //private int answer=0;
 
@@ -24,13 +24,14 @@ public class img_print : MonoBehaviourPunCallbacks
     void Start()
     {
         Debug.Log(v.answer);
-        theme = "greatman";
+        //theme = "greatman";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (theme == "greatman") gm_image_switch();
+        if (v.theme == "greatman") gm_image_switch();
+        if (v.theme == "chaos") ch_image_switch();
         //if (v.tohome == true) SceneManager.LoadScene("home");
     }
 
@@ -122,6 +123,106 @@ public class img_print : MonoBehaviourPunCallbacks
                 if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/greatman/kaesaru");
                 if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/greatman/puratonn");
                 if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/greatman/minamotonoyositune");
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    private void ch_image_switch()
+    {
+        switch (v.choices)
+        {
+            case 0:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/burokkori-");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/pi-mnn");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/kyuuri");
+                break;
+            case 1:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/kyabetu");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/retasu");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/hakusai");
+                break;
+            case 2:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/tomato");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/jagaimo");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/papurika");
+                break;
+            case 3:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/komatuna");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/serori");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/karihurawa-");
+                break;
+            case 4:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/tora");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/raionn");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/ti-ta-");
+                break;
+            case 5:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/usi");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/niwatori");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/buta");
+                break;
+            case 6:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/kitune");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/tanuki");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/nezumi");
+                break;
+            case 7:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/kuruma");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/zitennsya");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/basu");
+                break;
+            case 8:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/hikouki");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/dennsya");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/hune");
+                break;
+            case 9:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/f1");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/bagi-");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/baiku");
+                break;
+            case 10:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/ro-doro-ra-");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/syoberuka-");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/burudo-za-");
+                break;
+            case 11:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/maguro");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/sake");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/iwasi");
+                break;
+            case 12:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/same");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/si-rakannsu");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/hugu");
+                break;
+            case 13:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/kabutomusi");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/kuwagatamusi");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/cyou");
+                break;
+            case 14:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/hati");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/semi");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/ari");
+                break;
+            case 15:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/yakyuu");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/sakka-");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/kenndou");
+                break;
+            case 16:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/bare-");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/basuke");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/ragubi-");
+                break;
+            case 17:
+                if (v.answer == 0) img.sprite = Resources.Load<Sprite>("images/chaos/takkyuu");
+                if (v.answer == 1) img.sprite = Resources.Load<Sprite>("images/chaos/tenisu");
+                if (v.answer == 2) img.sprite = Resources.Load<Sprite>("images/chaos/batominntonn");
                 break;
             default:
                 break;

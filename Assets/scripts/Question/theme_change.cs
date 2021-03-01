@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Realtime;
 
-public class theme_change :MonoBehaviourPunCallbacks
+public class theme_change : MonoBehaviourPunCallbacks
 
 {
 
@@ -31,20 +31,26 @@ public class theme_change :MonoBehaviourPunCallbacks
     {
         photonView.RPC(nameof(room_creator), RpcTarget.MasterClient);
 
-        if(tb)theme_button.gameObject.SetActive(true);
-        if (!tb) text.gameObject.SetActive(true);
+        if (tb) theme_button.gameObject.SetActive(true);
+        if (tb==false)
+        {
+            text.gameObject.SetActive(true);
+            theme_button.gameObject.SetActive(false);
+        }
         if (ep) theme_canvas.gameObject.SetActive(false);
     }
 
     public void greatman()
     {
-        v.theme = "greatman";
+        //v.theme = "greatman";
+        photonView.RPC(nameof(theme_set), RpcTarget.All, "greatman");
         photonView.RPC(nameof(erase_panel), RpcTarget.All);
     }
 
     public void chaos()
     {
-        v.theme = "chaos";
+        //v.theme = "chaos";
+        photonView.RPC(nameof(theme_set), RpcTarget.All, "chaos");
         photonView.RPC(nameof(erase_panel), RpcTarget.All);
     }
 
@@ -74,6 +80,12 @@ public class theme_change :MonoBehaviourPunCallbacks
     void all_player_share(int num)
     {
         v.all_player = num;
+    }
+
+    [PunRPC]
+    void theme_set(string theme)
+    {
+        v.theme = theme;
     }
 
 
