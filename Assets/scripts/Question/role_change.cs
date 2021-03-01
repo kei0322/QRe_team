@@ -66,6 +66,7 @@ public class role_change : MonoBehaviourPunCallbacks
 
         photonView.RPC(nameof(choices_share), RpcTarget.All, cho);
 
+        respondent_canvas.gameObject.SetActive(true);
         respondent_canvas.gameObject.SetActive(false);
         questoner_canvas.gameObject.SetActive(true);
         Debug.Log("出題者を選択します");

@@ -35,7 +35,7 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
     {
         this.turnManager = this.gameObject.AddComponent<PunTurnManager>();//PunTurnManagerをコンポーネントに追加
         this.turnManager.TurnManagerListener = this;//リスナーを？
-        this.turnManager.TurnDuration = 5f;//ターンは5秒にする
+        this.turnManager.TurnDuration = 60f;//ターンは5秒にする
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
         //迂闊に弄らない方がよさげ
         if (this.TurnText != null)
         {
-            this.TurnText.text = this.turnManager.Turn.ToString() + "人目の挑戦";//何ターン目かを表示してくれる
+            this.TurnText.text = this.turnManager.Turn.ToString() + "回目の挑戦";//何ターン目かを表示してくれる
         }
         if (this.turnManager.Turn > 0 || this.TimeText != null && !IsShowingResults)//ターンが0以上、TimeTextがnullでない、結果が見えていない場合。
         {
