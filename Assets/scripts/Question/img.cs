@@ -34,8 +34,7 @@ public class img : MonoBehaviourPunCallbacks
     {
         if (v.theme == "greatman") gm_image_switch();
         
-        if (v.ansum >= v.player_count) photonView.RPC(nameof(to_test_frag), RpcTarget.All);
-        if(v.ttf ==true) SceneManager.LoadScene("Answer");
+        
         //photonView.RPC(nameof(SendChatMessage), RpcTarget.Others, "よろしくお願いします");
     }
 

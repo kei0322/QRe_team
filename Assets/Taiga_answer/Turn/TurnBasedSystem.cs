@@ -15,20 +15,21 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
     private Text TurnText;//ターン数の表示テキスト
     [SerializeField]
     private Text TimeText;//残り時間の表示テキスト
-    [SerializeField]
-    private Text WaitingText;//待っている時の表示テキスト
     private bool IsShowingResults;//真偽値
 
     [SerializeField]
     private GameObject answer;
     public GameObject button_set;
-    public GameObject button_set1;
     public GameObject role_change_canvas;
     public GameObject questoner_canvas;
     public GameObject respondent_canvas;
     public GameObject turn_panel;
 
     private PunTurnManager turnManager;
+
+    public Text correct_sum;
+    public Text correct_rate;
+    string correct_mes;
 
     public void Awake()
     {
@@ -79,13 +80,6 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
             //photonView.RPC(nameof(StartTurn), RpcTarget.All);//スタートターンの処理を全員で同期するよ
             photonView.RPC(nameof(panel_change), RpcTarget.All);//パネルの表示と非表示を行うよ
         }
-
-        //追加(2020/1/22)
-        if (v.result_frag == true)
-        {
-            SceneManager.LoadScene("Result");
-        }
-
     }
 
     public void OnPlayerFinished(Player player, int turn, object move)//1
@@ -127,15 +121,26 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
         answer.gameObject.SetActive(true);//追記 : ターン開始前に答えがチラチラ見える現象はここでパネルを表示しないようにすればいけるかもです
         button_set.gameObject.SetActive(true);
         Debug.Log(turn);//1回目[1]だった
-        //この後タイマースタートさせると正常に動く
-        //追加(2020/2/22)
-        /*
-        if (turn >= 2)
+
+        //正解したら
+        if (v.answer == 0)
         {
-            button_set.gameObject.SetActive(false);
-            button_set1.gameObject.SetActive(true);
+            correct_sum.text = "正解者数は" + v.correct0 + "人!!";
+            correct_rate.text = "演じた人の演技力は・・・" + correct_massege() + "級";
+            Debug.Log("正解者数は" + v.correct0 + "人");
         }
-        */
+        else if (v.answer == 1)
+        {
+            correct_sum.text = "正解者数は" + v.correct1 + "人!!";
+            correct_rate.text = "演じた人の演技力は・・・" + correct_massege() + "級";
+            Debug.Log("正解者数は" + v.correct1 + "人");
+        }
+        else if (v.answer == 2)
+        {
+            correct_sum.text = "正解者数は" + v.correct2 + "人!!";
+            correct_rate.text = "演じた人の演技力は・・・" + correct_massege() + "級";
+            Debug.Log("正解者数は" + v.correct2 + "人");
+        }
     }
 
     [PunRPC]
@@ -172,6 +177,10 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
     void Reset()
     {
         v.turn_sum = 0;
+        v.correct0 = 0;
+        v.correct1 = 0;
+        v.correct2 = 0;
+        v.res_sum = 0;
         //Debug.Log("sumの合計は"+ v.turn_sum);
     }
 
@@ -187,10 +196,52 @@ public class TurnBasedSystem : MonoBehaviourPunCallbacks, IPunTurnManagerCallbac
         role_change_canvas.gameObject.SetActive(true);
     }
 
-    //追加(2020/2/22)
     [PunRPC]
-    void to_result()
+    float correct_rate0()
     {
-        SceneManager.LoadScene("Result");
+        float num0 = Mathf.Floor(1.0f * v.correct0 / v.res_sum * 100);     //切り捨て
+        Debug.Log("正答率" + num0 + "%");
+        return num0;
+    }
+
+    [PunRPC]
+    float correct_rate1()
+    {
+        float num1 = Mathf.Floor(1.0f * v.correct1 / v.res_sum * 100);     //切り捨て
+        Debug.Log("正答率" + num1 + "%");
+        return num1;
+    }
+
+    [PunRPC]
+    float correct_rate2()
+    {
+        float num2 = Mathf.Floor(1.0f * v.correct2 / v.res_sum * 100);     //切り捨て
+        Debug.Log("正答率" + num2 + "%");
+        return num2;
+    }
+
+    string correct_massege()
+    {
+        if (correct_rate0() == 100 || correct_rate1() == 100 || correct_rate2() == 100)
+        {
+            correct_mes = "人間国宝";
+        }
+        else if (correct_rate0() >= 60 || correct_rate1() >= 60 || correct_rate2() >= 60)
+        {
+            correct_mes = "ハリウッド";
+        }
+        else if (correct_rate0() >= 30 || correct_rate1() >= 30 || correct_rate2() >= 30)
+        {
+            correct_mes = "ベテラン";
+        }
+        else if (correct_rate0() >= 10 || correct_rate1() >= 10 || correct_rate2() >= 10)
+        {
+            correct_mes = "新人";
+        }
+        else if (correct_rate0() >= 0 || correct_rate1() >= 0 || correct_rate2() >= 0)
+        {
+            correct_mes = "凡人";
+        }
+        return correct_mes;
     }
 }
