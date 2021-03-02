@@ -54,6 +54,7 @@ public class role_change : MonoBehaviourPunCallbacks
     {
         questoner_canvas.gameObject.SetActive(false);
         respondent_canvas.gameObject.SetActive(true);
+        photonView.RPC(nameof(ressum), RpcTarget.All);
         Debug.Log("回答者を選択します");
     }
 
@@ -125,6 +126,12 @@ public class role_change : MonoBehaviourPunCallbacks
         button_role_1.gameObject.SetActive(true);
         wait_text.gameObject.SetActive(false);
         role_change_canvas.gameObject.SetActive(false);
+    }
+
+    [PunRPC]
+    void ressum()
+    {
+        v.res_sum++;
     }
 
     [PunRPC]
