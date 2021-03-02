@@ -29,7 +29,7 @@ public class CLauncherScript : MonoBehaviourPunCallbacks
             {
                 PhotonNetwork.NickName = "player" + Random.Range(1, 99999);
             }
-            SceneManager.LoadScene("Lobby");
+            Invoke("ToLobby", 0.3f);
         }
     }
     #endregion
@@ -40,4 +40,8 @@ public class CLauncherScript : MonoBehaviourPunCallbacks
         GUILayout.Label(PhotonNetwork.NetworkClientState.ToString());
     }
 
+    void ToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
 }
