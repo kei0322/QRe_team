@@ -2914,7 +2914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1213668139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2932,7 +2932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.922, y: 190}
+  m_AnchoredPosition: {x: -10.921997, y: 190}
   m_SizeDelta: {x: 21.843506, y: -336.2687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213668140
@@ -5703,8 +5703,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33, y: -56}
-  m_SizeDelta: {x: 800.0028, y: 350.9453}
+  m_AnchoredPosition: {x: 64.7, y: -56}
+  m_SizeDelta: {x: 863.3358, y: 350.9453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997347894
 MonoBehaviour:
@@ -5727,7 +5727,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5738,7 +5738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\u30EB\u30FC\u30EB\n\u30FB\u5236\u9650\u6642\u9593\u306F\uFF11\u5206\uFF01\n\u30FB\u51FA\u984C\u8005\u306F\u304A\u984C\u3092\u5143\u306B\u30E2\u30CE\u30DE\u30CD\uFF01\n\u30FB\u56DE\u7B54\u8005\u306F\uFF13\u3064\u306E\u9078\u629E\u80A2\u304B\u3089\u56DE\u7B54\uFF01\n\u30FB\u30E2\u30CE\u30DE\u30CD\u306B\u6163\u308C\u305F\u3089\u30B8\u30A7\u30B9\u30C1\u30E3\u30FC\u306E\u307F\u3067\u6311\u6226\u3057\u3066\u307F\u3088\u3046\uFF01"
+  m_Text: "\n\u30EB\u30FC\u30EB\n\u30FB\u5236\u9650\u6642\u9593\u306F\uFF11\u5206\uFF01\n\u30FB\u51FA\u984C\u8005\u306F\u304A\u984C\u3092\u5143\u306B\u30E2\u30CE\u30DE\u30CD\uFF01\n\u30FB\u56DE\u7B54\u8005\u306F\uFF13\u3064\u306E\u9078\u629E\u80A2\u304B\u3089\u56DE\u7B54\uFF01\n\u30FB\u30E2\u30CE\u30DE\u30CD\u306B\u6163\u308C\u305F\u3089\u558B\u3089\u305A\u30B8\u30A7\u30B9\u30C1\u30E3\u30FC\u306E\u307F\u3067\u6311\u6226\u3057\u3066\u307F\u3088\u3046\uFF01"
 --- !u!222 &1997347895
 CanvasRenderer:
   m_ObjectHideFlags: 0
