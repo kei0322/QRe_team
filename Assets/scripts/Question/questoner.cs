@@ -154,7 +154,7 @@ public class questoner : MonoBehaviourPunCallbacks
             case 2:
                 if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/tomato"); name.GetComponent<Text>().text = "トマト"; description.GetComponent<Text>().text = "・赤\n・酸っぱい\n・リコピン\n・回文"; }
                 if (v.answer == 1) { img.sprite = Resources.Load<Sprite>("images/chaos/jagaimo"); name.GetComponent<Text>().text = "ジャガイモ"; description.GetComponent<Text>().text = "・デンプン\n・芽に毒\n・根ではなく茎です"; }
-                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/papurika"); name.GetComponent<Text>().text = "パプリカ"; description.GetComponent<Text>().text = "・赤\n・黄\n・サラダ\n・米津玄師"; }
+                if (v.answer == 2) { img.sprite = Resources.Load<Sprite>("images/chaos/papurika"); name.GetComponent<Text>().text = "パプリカ"; description.GetComponent<Text>().text = "・赤\n・黄\n・サラダ\n・実はイチゴより甘い"; }
                 break;
             case 3:
                 if (v.answer == 0) { img.sprite = Resources.Load<Sprite>("images/chaos/komatuna"); name.GetComponent<Text>().text = "小松菜"; description.GetComponent<Text>().text = "・葉\n・雑煮\n・おひたし"; }
